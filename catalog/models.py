@@ -28,7 +28,7 @@ class Book(models.Model):
     """Model representing a book (but not a specific copy of a book)."""
     title = models.CharField(max_length=200)
 
-    # Foreign Key used because book can only have one author,
+    # Foreign Key: book can only have one author,
     # but authors can have multiple books
     # Author as a string rather than object because it hasn't been
     # declared yet in the file
@@ -40,12 +40,12 @@ class Book(models.Model):
                             unique=True,
                             help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>')
 
-    # ManyToManyField used because genre can contain many books.
+    # Genre can contain many books.
     # Books can cover many genres.
-    # Genre class has already been defined so we can specify the object above.
     genre = models.ManyToManyField(Genre,
                                    help_text='Select genre for this book')
-
+    # Language can contain many books.
+    # Books can cover many languages.
     language = models.ManyToManyField(Language,
                                    help_text='Select language book is written')
 
@@ -126,3 +126,4 @@ class Author(models.Model):
 
         """String for representing the Model object."""
         return f'{self.last_name}, {self.first_name}'
+

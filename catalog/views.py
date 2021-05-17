@@ -55,8 +55,8 @@ class AuthorListView(generic.ListView):
 class AuthorDetailView(generic.DetailView):
     model = Author
 
-    # def author_detail_view(request, primary_key):
-    #     author = get_object_or_404(Author, pk=primary_key)
-    #     return render(request,
-    #                   'catalog/author_detail.html',
-    #                   context={'author': author})
+    def author_detail_view(request, primary_key):
+        author = get_object_or_404(Author, pk=primary_key)
+        return render(request,
+                      'catalog/author_detail.html',
+                      context={'author': author})
