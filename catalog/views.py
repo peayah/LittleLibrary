@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.views import generic
 from catalog.models import Book, Author, BookInstance, Genre
 
 
@@ -24,8 +24,12 @@ def index(request):
         'num_instances_available': num_instances_available,
         'num_authors': num_authors,
         'num_genres': num_genres,
-        'num_martian_book':num_martian_book,
+        'num_martian_book': num_martian_book,
     }
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
+
+
+class BookListView(generic.ListView):
+    model = Book
