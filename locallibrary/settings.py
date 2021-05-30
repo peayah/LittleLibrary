@@ -131,3 +131,6 @@ SESSION_SAVE_EVERY_REQUEST = True
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
 
+# Send email during testing
+#This logs any emails sent to the console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
