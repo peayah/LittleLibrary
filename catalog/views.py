@@ -147,3 +147,26 @@ class AuthorUpdate(UpdateView):
 class AuthorDelete(DeleteView):
     model = Author
     success_url = reverse_lazy('authors')
+
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
+from catalog.models import Book
+
+class BookCreate(CreateView):
+    model = Book
+    fields = ['title',
+              'author',
+              'summary',
+              'isbn',
+              'genre',
+              'language']
+    initial = {'language': 'english'}
+
+class BookUpdate(UpdateView):
+    model = Book
+    fields = '__all__' # Not recommended (potential security issue if more fields added)
+
+class BookDelete(DeleteView):
+    model = Book
+    success_url = reverse_lazy('books')
