@@ -20,7 +20,7 @@ def index(request):
     num_martian_book = Book.objects.filter(title__contains='Martian').count()
 
     # Number of visits to this view, as counted in the session variable.
-    num_visits = request.session.get('num_visits', 10)
+    num_visits = request.session.get('num_visits', 0)
     request.session['visits'] = num_visits + 1
 
     context = {
