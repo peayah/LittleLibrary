@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse  # generate URLs by reversing URL patterns
 import uuid  # Required for unique book instances
 from django.contrib.auth.models import User
+from datetime import date
 
 
 class Genre(models.Model):
@@ -99,6 +100,12 @@ class BookInstance(models.Model):
 
     class Meta:
         ordering = ['due_back']
+
+    @property
+    def is_overdue(self):
+        if self.due_back and date.today() > self.due_back:
+            return True
+        return False
 
     def __str__(self):
 
