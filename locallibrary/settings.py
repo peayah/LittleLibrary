@@ -130,3 +130,4 @@ SESSION_SAVE_EVERY_REQUEST = True
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
+
