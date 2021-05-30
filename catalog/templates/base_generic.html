@@ -23,6 +23,7 @@
            <li>User: {{ user.get_username }}</li>
 
            <li><a href="{% url 'my-borrowed' %}">Borrowed Books</a></li>
+           <li><a href="{% url 'all-borrowed' %}">Books borrowed by patrons</a></li>
 
            <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
         {% else %}
