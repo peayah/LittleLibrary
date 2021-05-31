@@ -51,7 +51,7 @@ class Book(models.Model):
     language = models.ManyToManyField(Language,
                                    help_text='Select language book is written in')
 
-    book_Img = models.ImageField(upload_to='images/')
+    book_Img = models.ImageField(upload_to='images/',  default='')
 
 
     def __str__(self):
