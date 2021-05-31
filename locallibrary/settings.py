@@ -134,3 +134,9 @@ LOGIN_REDIRECT_URL = '/'
 # Send email during testing
 #This logs any emails sent to the console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# MEDIA_ROOT is for server path to store files in the computer.
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+
+# MEDIA_URL is the reference URL for browser to access the files over Http.
+MEDIA_URL = '/media/'
