@@ -160,6 +160,7 @@ class BookCreate(CreateView):
               'summary',
               'isbn',
               'genre',
+              'book_Img',
               'language']
     initial = {'language': 'english'}
 
