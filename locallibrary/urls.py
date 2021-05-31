@@ -25,6 +25,7 @@ from django.views.generic import RedirectView
 # Use static() to add url mapping to serve static files during development (only)
 from django.conf import settings
 from django.conf.urls.static import static
+
 urlpatterns = [
 
     path('admin/', admin.site.urls),
@@ -36,4 +37,5 @@ urlpatterns = [
     # Add Django site authentication urls (for login, logout, password management)
     path('accounts/', include('django.contrib.auth.urls')),
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

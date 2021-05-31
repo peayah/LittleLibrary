@@ -51,6 +51,9 @@ class Book(models.Model):
     language = models.ManyToManyField(Language,
                                    help_text='Select language book is written in')
 
+    book_Img = models.ImageField(upload_to='images/')
+
+
     def __str__(self):
         """String for representing the Model object."""
         return self.title
