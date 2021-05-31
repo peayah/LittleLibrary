@@ -49,7 +49,7 @@ class Book(models.Model):
     # Language can contain many books.
     # Books can cover many languages.
     language = models.ManyToManyField(Language,
-                                   help_text='Select language book is written')
+                                   help_text='Select language book is written in')
 
     def __str__(self):
         """String for representing the Model object."""
