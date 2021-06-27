@@ -62,4 +62,6 @@ urlpatterns = [
          views.BookDelete.as_view(),
          name='book-delete'),
 
+
+
 ]
