@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-5^aia1!!9p9lm762@kfaw)yct!&7@x%l6uq!au$l%u6una#*$&
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['ancient-waters-50249.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['postgresql-perpendicular-10725.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
